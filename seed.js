@@ -68,7 +68,7 @@ async function seedDB(){
     console.log('Product Seeded');
 }
 
-seedDB();
+module.exports=seedDB;
 
 
 

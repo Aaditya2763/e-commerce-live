@@ -101,7 +101,8 @@ app.get('/', (req, res) => {
 const productRoutes = require('./routes/productRoutes');
 const authRoutes = require('./routes/authRoutes');
 const cartRoutes = require('./routes/cartRoutes');
-
+//seeding dummy products
+const seedDB=require('./seed')
 
 // APIs
 
@@ -121,6 +122,8 @@ app.use(authRoutes);
 app.use(cartRoutes);
 app.use(likeProductApi);
 
+//calling seeddb function 
+seedDB();
 
 app.get('/error', (req, res) => {
   res.render('error');
