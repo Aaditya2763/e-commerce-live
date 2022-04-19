@@ -75,7 +75,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// setting up local strategy 
+// setting up local strategy z
 passport.use(new LocalStrategy(User.authenticate()));
 
 // add the user into the session
@@ -131,7 +131,7 @@ app.all("*", (req, res) => {
 });
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 
 app.listen(port,()=>{
