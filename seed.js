@@ -66,6 +66,7 @@ async function seedDB(){
     await Product.deleteMany({});
     await Product.insertMany(products);
     console.log('Product Seeded');
+  
 }
 
 module.exports=seedDB;

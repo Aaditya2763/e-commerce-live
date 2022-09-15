@@ -17,14 +17,15 @@ const MongoStore = require('connect-mongo');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
 
-
- const dbUrl = process.env.DB_URL ||'mongodb://localhost:27017/shopping-app'
-
-
-
+  const dbUrl = process.env.DB_URL ||'mongodb://localhost:27017/shopping-app'
 mongoose.connect(dbUrl)
-    .then(() => console.log("DB CONNECTED"))
-    .catch((err) => console.log(err));
+  .then(() => console.log('DB connected'))
+  .catch((e) => console.log(e));
+
+
+// mongoose.connect(dbUrl)
+//     .then(() => console.log("DB CONNECTED"))
+//     .catch((err) => console.log(err));
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
@@ -46,7 +47,7 @@ const secret = process.env.SECRET || 'weneedabettersecret';
 
 const store = MongoStore.create({
   secret: secret,
-  mongoUrl: dbUrl,
+   mongoUrl: 'mongodb://localhost:27017/shopping-app',
   touchAfter: 24 * 3600
 });
 

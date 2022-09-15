@@ -13,7 +13,7 @@ const reviewSchema = new mongoose.Schema({
     },
     author: {
         type: String,
-        trim:true
+        
     }
 },{timestamps:true});
 

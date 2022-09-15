@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const Review = require('./review');
-
+ const Review = require('./review');
+const User=require('./user')
 
 
 const productSchema = new mongoose.Schema({
