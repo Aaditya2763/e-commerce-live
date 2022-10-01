@@ -23,10 +23,6 @@ mongoose.connect(dbUrl)
   .catch((e) => console.log(e));
 
 
-// mongoose.connect(dbUrl)
-//     .then(() => console.log("DB CONNECTED"))
-//     .catch((err) => console.log(err));
-
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -47,7 +43,7 @@ const secret = process.env.SECRET || 'weneedabettersecret';
 
 const store = MongoStore.create({
   secret: secret,
-   mongoUrl: 'mongodb://localhost:27017/shopping-app',
+   mongoUrl: dbUrl,
   touchAfter: 24 * 3600
 });
 
